@@ -1,0 +1,37 @@
+{
+  "name": "react-mobx-ts-material-ui-next",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "email": "landman.arjan@gmail.com",
+    "name": "Arjan Landman"
+  },
+  "scripts": {
+    "build": "webpack ./webpack.config.js",
+    "start": "webpack-dev-server ./webpack.config.js --content-base ./public"
+  },
+  "dependencies": {
+    "@aspnet/signalr-client": "~1.0.0-alpha2-final",
+    "@types/react-router-dom": "^4.2.3",
+    "lazy-route": "^1.0.7",
+    "material-ui": "^1.0.0-beta.31",
+    "mobx": "3.4.1",
+    "mobx-promise": "^0.3.1",
+    "mobx-react": "4.3.5",
+    "mobx-react-devtools": "^4.2.15",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "ts-loader": "3.0.5",
+    "typescript": "2.7.1",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.3"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/core-js": "^0.9.46",
+    "@types/node": "^9.4.0",
+    "@types/react": "^16.0.35",
+    "@types/react-dom": "^16.0.3"
+  }
+}
