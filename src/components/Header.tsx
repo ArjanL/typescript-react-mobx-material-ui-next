@@ -6,15 +6,22 @@ import NavMenu from './NavMenu';
 import AppState from '../stores/AppState';
 
 
+interface INavMenuItem{
+    active: boolean;
+    pageUrl: string;
+    displayName: string;
+}
 
 @inject('store') @observer
-export default class Header extends React.Component<{ store?: AppState }, any> {
+export default class Header extends React.Component<{ store?: AppState },any> {
     store: AppState;
 
     constructor(props) {
         super(props);
         this.store = this.props.store;
     }
+
+
 
     authenticate(e) {
         if (e) e.preventDefault();
@@ -24,6 +31,7 @@ export default class Header extends React.Component<{ store?: AppState }, any> {
 
     render() {
         const { authenticated } = this.store;
+
         return (
             <div className='topbar'>
                 <NavMenu store={this.store} />

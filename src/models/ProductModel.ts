@@ -1,5 +1,11 @@
 import {observable} from 'mobx';
 import ProductStore from '../stores/ProductStore';
+
+interface IProduct{
+	id: string;
+	title: string;
+	completed: boolean;
+}
 export default class ProductModel {
 	store: ProductStore;
 	id: string;

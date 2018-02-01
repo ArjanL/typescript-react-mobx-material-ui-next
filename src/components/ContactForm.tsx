@@ -6,6 +6,7 @@ import { observer } from 'mobx-react';
 import HomeStore from '../stores/HomeStore';
 
 
+
 @observer
 export class ContactForm extends React.Component<{}> {
   data = new HomeStore();

@@ -1,5 +1,12 @@
 import { observable, action } from 'mobx';
 
+interface photo{
+  albumId: number;
+  id: number;
+  thumbnailUrl: string;
+  title: string;
+  url: string;
+}
 
 export default class AppState {
   @observable authenticated: boolean;
@@ -8,18 +15,26 @@ export default class AppState {
   @observable item;
 
   constructor() {
-    this.authenticated = false;
+    this.authenticated = true;
     this.authenticating = false;
     this.items = [];
     this.item = {};
   }
 
   async fetchData(pathname, id) {
-   // let { data } = await axios.get(`https://jsonplaceholder.typicode.com${pathname}`);
-   const result = await fetch(`https://jsonplaceholder.typicode.com/photos`);
-   const { data } = (await result.json()) || [];
-    console.log(data);
-    data.length > 0 ? this.setData(data) : this.setSingle(data);
+    let apiPath = "";
+    id == null ? apiPath = pathname : apiPath = pathname +'/'+ id;
+    console.log('API FETCH: '+pathname);
+
+
+   const result = await fetch(`https://jsonplaceholder.typicode.com/${apiPath}`)
+   .then(response => response.json())
+   .then(data => {
+      data.length > 0 ? this.setData(data) : this.setSingle(data);
+      console.log(data);
+    });
+
+
   }
 
   @action setData(data) {
